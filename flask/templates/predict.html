@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Online Payments Fraud Detection</title>
+  <style>
+    body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f9fa;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+header {
+  background: #2d3e50;
+  color: #fff;
+  padding: 1.5rem 0 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1.2rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+main {
+  max-width: 500px;
+  margin: 2.5rem auto;
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(44,62,80,0.07);
+}
+
+h2 {
+  color: #2d3e50;
+  margin-top: 0;
+}
+
+form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #bfc9d1;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input[type="submit"], button {
+  background: #2d3e50;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+
+input[type="submit"]:hover, button:hover {
+  background: #1a232e;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: #2d3e50;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Online Payments Fraud Detection</h1>
+    <nav>
+      <ul>
+        <a href="{{ url_for('about1') }}">Home</a>
+        <a href="{{ url_for('home1') }}">Predict</a>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Predict Fraud</h2>
+    <form action="{{ url_for('predict') }}" method="POST">
+      <label>Step:<input type="text" name="step" required></label><br/>
+      <label>Type:<input type="text" name="type" required/></label><br/>
+      <label>Amount:<input type="number" name="amount" required/></label><br/>
+      <label>Old Balance (Org):<input type="number" name="oldbalanceOrg" required/></label><br/>
+      <label>New Balance (Org):<input type="number" name="newbalanceOrig" required/></label><br/>
+      <label>Old Balance (Dest):<input type="number" name="oldbalanceDest" required/></label><br/>
+      <label>New Balance (Dest):<input type="number" name="newbalanceDest" required/></label><br/>
+      <input type="submit" value="Predict" />
+    </form>
+  </main>
+
+  <footer>Online Payments Fraud Detection</footer>
+</body>
+</html>
