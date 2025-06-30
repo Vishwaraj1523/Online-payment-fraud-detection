@@ -2,7 +2,7 @@ from flask import Flask,render_template, request
 import pickle
 import pandas as pd
 
-model = pickle.load(open(r"D:/ML/_______PROJECT________/online paymetn fraud detection/flask/payment.pkl", "rb"))
+model = pickle.load(open("payment.pkl", "rb"))
 app = Flask(__name__)
 @app.route('/')
 
